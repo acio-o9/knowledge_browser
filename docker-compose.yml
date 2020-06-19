@@ -1,0 +1,27 @@
+version: '3'
+
+services :
+  app:
+    build:
+        context: ./
+        dockerfile: ./docker/Dockerfile
+    ports:
+        - '8081:80'
+    volumes:
+      - ./application:/var/www/application
+    env_file:
+      ./docker/app/.env
+    tty: true
+    stdin_open: true
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - '3306:3306'
