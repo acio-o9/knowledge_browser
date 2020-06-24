@@ -4,7 +4,7 @@
 PHPでエンドポイント(APIにアクセスするためのURI)を定義して、
 フロントエンドから呼び出す想定をしてます
 
-phpは7.4、Mysqlは5.7系で動いています
+phpは7.4、Mysqlは5.7系で動いています。Laravelは7系を入れました。
 
 ```
 php -v
@@ -18,8 +18,19 @@ mysql --version
 mysql  Ver 14.14 Distrib 5.7.28, for Linux (x86_64) using  EditLine wrapper
 ```
 
+```
+php artisan --version
+Laravel Framework 7.17.2
+```
+
 ## 起動
 docker-compose up -d
+
+### 初期起動時にはこちらも実行
+```
+docker-compose exec app bash
+cd application/service/ && composer install
+```
 
 ## php
 ``` 
