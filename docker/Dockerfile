@@ -22,5 +22,6 @@ RUN a2enmod rewrite
 COPY application /var/www/application
 
 RUN chown -R www-data:www-data /var/www/
+RUN cd /var/www/application/service/ && composer install
 
 WORKDIR /var/www/

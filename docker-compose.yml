@@ -9,6 +9,7 @@ services :
         - '8081:80'
     volumes:
       - ./application:/var/www/application
+      - /var/www/application/service/vendor
     env_file:
       ./docker/app/.env
     tty: true
