@@ -2,11 +2,12 @@ version: '3'
 
 services :
   app:
+    container_name: app
     build:
-        context: ./
-        dockerfile: ./docker/Dockerfile
+      context: ./
+      dockerfile: ./docker/Dockerfile
     ports:
-        - '8081:80'
+      - '8081:80'
     volumes:
       - ./application:/var/www/application
     env_file:
@@ -15,6 +16,7 @@ services :
     stdin_open: true
 
   mysql:
+    container_name: mysql
     image: mysql:5.7
     volumes:
       - ./docker/mysql/conf.d:/etc/mysql/conf.d
