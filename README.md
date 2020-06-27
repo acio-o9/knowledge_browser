@@ -4,6 +4,8 @@
 PHPでエンドポイント(APIにアクセスするためのURI)を定義して、
 フロントエンドから呼び出す想定をしてます
 
+[API定義はこちら](https://github.com/acio-o9/knowledge_browser#about_APIs)
+
 phpは7.4、Mysqlは5.7系で動いています。Laravelは7系を入れました。
 
 ```
@@ -57,3 +59,28 @@ GUIツールなどで見る場合は下記とenvファイルのユーザで接�
 ホスト: 127.0.0.1
 ポート: 3306
 
+# about APIs
+
+提供するAPIを下記ファイルで定義している
+
+- /api.yml
+
+## swagger-editor
+
+ymlファイル編集に利用する
+
+```
+http://localhost:8001
+```
+
+画面上部のmenuより、import yml fileを選択して編集する
+
+// FIXME マウントして更新できるようにしたい
+
+## swagger-ui
+
+editor機能をなくしたもの
+
+```
+http://localhost:8002
+```
